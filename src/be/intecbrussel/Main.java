@@ -37,24 +37,6 @@ public class Main {
         }
 
         mapitus.forEach((k,v) -> System.out.println(k.intValue() + " " + v));
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -68,7 +50,6 @@ public class Main {
 
         return nl;
     }
-
 
 
     public static List<Patient> getAllPatients(){
