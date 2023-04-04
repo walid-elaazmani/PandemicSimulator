@@ -1,6 +1,7 @@
 package be.intecbrussel;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,29 +18,29 @@ public class Main {
         // Map
 
         Map<Integer, List<Patient>> mapitus = new HashMap<>();
-        List<Patient> cat1 = new ArrayList<>();
-        List<Patient> cat2 = new ArrayList<>();
-        List<Patient> cat3 = new ArrayList<>();
-        List<Patient> cat4 = new ArrayList<>();
+        mapitus.put(1, new ArrayList<Patient>());
+        mapitus.put(2, new ArrayList<Patient>());
+        mapitus.put(3, new ArrayList<Patient>());
+        mapitus.put(4, new ArrayList<Patient>());
 
         for (Patient patient : ff) {
 
             if (((patient.getAge() >= 65 && patient.getTemperature() >= 38) || patient.getTemperature() >= 40) && patient.isUnknownVirus()) {
-                cat1.add(patient);
-                mapitus.put(1, cat1);
+                mapitus.get(1).add(patient);
             } else if (patient.getTemperature() >= 38 && patient.isUnknownVirus()) {
-                cat2.add(patient);
-                mapitus.put(2, cat2);
+                mapitus.get(2).add(patient);
             } else if (patient.getTemperature() < 38 && patient.isUnknownVirus()) {
-                cat3.add(patient);
-                mapitus.put(3, cat3);
+                mapitus.get(3).add(patient);
             } else {
-                cat4.add(patient);
-                mapitus.put(4, cat4);
+                mapitus.get(4).add(patient);
             }
         }
 
         mapitus.forEach((k,v) -> System.out.println(k.intValue() + " " + v));
+        
+
+
+
 
 
 
